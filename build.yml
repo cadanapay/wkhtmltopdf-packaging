@@ -378,13 +378,21 @@ docker-targets:
       xorg-x11-fonts-Type1
       zlib
 
+  amazonlinux2023_lambda:
+    source: docker/Dockerfile.centos
+    args:
+      from: amazonlinux:2023
+    output: lambda2023_zip
+    after_compile: amazonlinux2_lambda
+    matrix: ['x86_64', 'aarch64']
+
   amazonlinux2_lambda:
     source: docker/Dockerfile.centos
     args:
       from: amazonlinux:2
     output: lambda_zip
     after_compile: amazonlinux2_lambda
-    arch: x86_64
+    matrix: ['x86_64', 'aarch64']
 
   opensuse.leap15:
     source: docker/Dockerfile.opensuse
