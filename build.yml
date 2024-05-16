@@ -382,8 +382,8 @@ docker-targets:
     source: docker/Dockerfile.centos
     args:
       from: amazonlinux:2023
-    output: lambda2023_zip
-    after_compile: amazonlinux2_lambda
+    output: lambda_zip
+    after_compile: amazonlinux2023_lambda.sh
     matrix: ['x86_64', 'aarch64']
 
   amazonlinux2_lambda:

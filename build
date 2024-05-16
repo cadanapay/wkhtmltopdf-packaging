@@ -94,10 +94,12 @@ def compile_docker(config, target, src_dir, tgt_dir, debug=False):
         sys.exit(1)
 
     if not os.path.exists(os.path.join(src_dir, 'wkhtmltopdf.pro')):
+        message(os.path.join(src_dir, 'wkhtmltopdf.pro'))
         message('Not wkhtmltopdf source directory: %s' % src_dir)
         sys.exit(1)
 
     if not os.path.exists(os.path.join(src_dir, 'qt', 'configure')):
+        message(os.path.join(src_dir, 'qt', 'configure'))
         message('Qt not present in wkhtmltopdf source: %s' %  src_dir)
         sys.exit(1)
 
